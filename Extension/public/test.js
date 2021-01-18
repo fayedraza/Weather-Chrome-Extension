@@ -153,7 +153,7 @@ function changeValue(data, zipcode, isMorning, city, state){
         
 
      fetch(
-          `https://cors-anywhere.herokuapp.com/http://api.worldweatheronline.com/premium/v1/tz.ashx?key=6067b7f1ed394ffd864224447211401&q=${zipcode}&format=json`
+          `https://cors-anywhere.herokuapp.com/http://api.worldweatheronline.com/premium/v1/tz.ashx?key=&q=${zipcode}&format=json`
           ).then((response) => response.json())
           .then(data => {
             
@@ -168,7 +168,7 @@ function changeValue(data, zipcode, isMorning, city, state){
         document.getElementById("descriptionOfWeather").style.border="5px solid white";
     
     fetch(
-         `http://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&appid=485f9998989384941ff5b560140084e4`
+         `http://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&appid=`
          ).then((response) => response.json())
          .then((data) => this.changeValue(data, zipcode, isMorning, city, state ));
           });
@@ -198,7 +198,7 @@ function changeValue(data, zipcode, isMorning, city, state){
 
         if(zipcode == ""){
       
-fetch(`https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest/VCZaU9nnSKX1gKFcm0fRbwEEonvrf8WkCAwwxhv3WXjCIOOO0ZbFXg1ugDTGys8I/city-zips.json/${city}/${state}`) // https://cors-anywhere.herokuapp.com/https://example.com
+fetch(`https://cors-anywhere.herokuapp.com/https://www.zipcodeapi.com/rest//city-zips.json/${city}/${state}`) // https://cors-anywhere.herokuapp.com/https://example.com
 .then((response) => response.json())
 .then(data =>  {
 
@@ -244,7 +244,7 @@ if(data.zip_codes.length > 0){
         
 
      fetch(
-          `https://cors-anywhere.herokuapp.com/http://api.worldweatheronline.com/premium/v1/tz.ashx?key=6067b7f1ed394ffd864224447211401&q=${zipcode}&format=json`
+          `https://cors-anywhere.herokuapp.com/http://api.worldweatheronline.com/premium/v1/tz.ashx?key=&q=${zipcode}&format=json`
           ).then((response) => response.json())
           .then(data => {
             
@@ -275,7 +275,7 @@ if(data.zip_codes.length > 0){
           document.getElementById("descriptionOfWeather").style.border="5px solid white";
          
           fetch(
-               `http://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&appid=485f9998989384941ff5b560140084e4`
+               `http://api.openweathermap.org/data/2.5/weather?zip=${zipcode}&appid=`
                ).then((response) => response.json())
                .then((data) => changeValue(data, zipcode, isMorning, "", ""));
           }else{
